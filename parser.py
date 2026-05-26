@@ -44,10 +44,10 @@ def parseNCAA(filename):
         reader = csv.reader(file)
 
         for row in reader:
-            team1 = row[0].strip()
+            team1 = row[0].strip().strip('"')
             score1 = clean_score(row[1].strip())
             
-            team2 = row[2].strip()
+            team2 = row[2].strip().strip('"')
             score2 = clean_score(row[3].strip())
 
             if score1 > score2:
